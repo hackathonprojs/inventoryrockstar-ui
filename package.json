@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/hackathonprojs/inventoryrockstar-ui/issues"
   },
-  "homepage": "https://github.com/hackathonprojs/inventoryrockstar-ui#readme"
+  "homepage": "https://github.com/hackathonprojs/inventoryrockstar-ui#readme",
+  "dependencies": {
+    "express": "^4.17.0"
+  }
 }
