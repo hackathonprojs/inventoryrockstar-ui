@@ -82,7 +82,11 @@ function readInventoryAmount() {
   });
 }
 
-setInterval(readInventoryAmount, 200);
+const checkInterval = 500; // 500ms
+
+setInterval(readInventoryAmount, checkInterval);
+
+const showHideEffectDuration = 1000; // 1000ms
 
 /**
  * display the number of bottles according to inventoryAmount
@@ -90,40 +94,40 @@ setInterval(readInventoryAmount, 200);
 function displayBottles(inventoryAmount) {
   switch(inventoryAmount) {
     case 0:
-      $("#item1").hide();
-      $("#item2").hide();
-      $("#item3").hide();
-      $("#item4").hide();
+      $("#item1").hide(showHideEffectDuration);
+      $("#item2").hide(showHideEffectDuration);
+      $("#item3").hide(showHideEffectDuration);
+      $("#item4").hide(showHideEffectDuration);
       break;
     case 1:
-      $("#item1").show();
-      $("#item2").hide();
-      $("#item3").hide();
-      $("#item4").hide();
+      $("#item1").show(showHideEffectDuration);
+      $("#item2").hide(showHideEffectDuration);
+      $("#item3").hide(showHideEffectDuration);
+      $("#item4").hide(showHideEffectDuration);
       break;
     case 2:
-      $("#item1").show();
-      $("#item2").show();
-      $("#item3").hide();
-      $("#item4").hide();
+      $("#item1").show(showHideEffectDuration);
+      $("#item2").show(showHideEffectDuration);
+      $("#item3").hide(showHideEffectDuration);
+      $("#item4").hide(showHideEffectDuration);
       break;
     case 3:
-      $("#item1").show();
-      $("#item2").show();
-      $("#item3").show();
-      $("#item4").hide();
+      $("#item1").show(showHideEffectDuration);
+      $("#item2").show(showHideEffectDuration);
+      $("#item3").show(showHideEffectDuration);
+      $("#item4").hide(showHideEffectDuration);
       break;
     case 4:
-      $("#item1").show();
-      $("#item2").show();
-      $("#item3").show();
-      $("#item4").show();
+      $("#item1").show(showHideEffectDuration);
+      $("#item2").show(showHideEffectDuration);
+      $("#item3").show(showHideEffectDuration);
+      $("#item4").show(showHideEffectDuration);
       break;
     default:
-      $("#item1").show();
-      $("#item2").show();
-      $("#item3").show();
-      $("#item4").show();
+      $("#item1").show(showHideEffectDuration);
+      $("#item2").show(showHideEffectDuration);
+      $("#item3").show(showHideEffectDuration);
+      $("#item4").show(showHideEffectDuration);
       break;
   }
 }
