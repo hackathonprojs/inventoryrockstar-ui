@@ -38,6 +38,15 @@
       left: 340px;
     }
 
+    #inventory-amount {
+      position: absolute;
+      z-index: 3;
+      top: 192px;
+      left: 35px;
+      font-size: 72px;
+      color: olivedrab;
+    }
+
     </style>
 </head>
 
@@ -48,6 +57,8 @@
   <img id="item2" class="shelf-item placeable" src="assets/img/waterbottle.png">
   <img id="item3" class="shelf-item placeable" src="assets/img/waterbottle.png">
   <img id="item4" class="shelf-item placeable" src="assets/img/waterbottle.png">
+
+  <div id="inventory-amount">4</div>
 </body>
 
 
@@ -79,10 +90,11 @@ function readInventoryAmount() {
     let inventoryAmount = parseInt(data);
     // display the number of bottles according to inventoryAmount
     displayBottles(inventoryAmount);
+    displayInventoryAmount(inventoryAmount);
   });
 }
 
-const checkInterval = 500; // 500ms
+const checkInterval = 1000; // 500ms
 
 setInterval(readInventoryAmount, checkInterval);
 
@@ -129,6 +141,18 @@ function displayBottles(inventoryAmount) {
       $("#item3").show(showHideEffectDuration);
       $("#item4").show(showHideEffectDuration);
       break;
+  }
+}
+
+
+function displayInventoryAmount(inventoryAmount) {
+  $("#inventory-amount").text(inventoryAmount);
+  if (inventoryAmount >= 2) {
+    $("#inventory-amount").css("color", "olivedrab");
+  } else {
+    $("#inventory-amount").css("color", "red");
+    // this will continue flashing the div (in this case, only the text are flashed, because the div has transparent background)
+    $('#inventory-amount').fadeTo(100, 0.3, function() { $(this).fadeTo(500, 1.0); });
   }
 }
 </script>
