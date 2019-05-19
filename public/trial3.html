@@ -1,0 +1,53 @@
+<!-- testing one image on top of another. -->
+
+<html>
+
+<head>
+
+
+<style>
+    .placeable {
+      position: absolute;
+    }
+    .shelf-base {
+      z-index: 1;
+      top: 25px;
+      left: 25px;
+    }
+    .shelf-item {
+      z-index: 3;
+    }
+
+    #item1 {
+      top: 200px;
+      left: 100px;
+    }
+
+    #item2 {
+      top: 200px;
+      left: 180px;
+    }
+
+    #item3 {
+      top: 200px;
+      left: 260px;
+    }
+
+    #item4 {
+      top: 200px;
+      left: 340px;
+    }
+
+    </style>
+</head>
+
+
+<body>
+  <img class="shelf-base placeable" src="assets/img/shelf.jpg">
+  <img id="item1" class="shelf-item placeable" src="assets/img/waterbottle.png">
+  <img id="item2" class="shelf-item placeable" src="assets/img/waterbottle.png">
+  <img id="item3" class="shelf-item placeable" src="assets/img/waterbottle.png">
+  <img id="item4" class="shelf-item placeable" src="assets/img/waterbottle.png">
+</body>
+
+</html>
