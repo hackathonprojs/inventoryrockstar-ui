@@ -1,0 +1,23 @@
+<!-- testing one image on top of another -->
+<style>
+.parent {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.image1 {
+  position: relative;
+  top: 50px;
+  left: 70px;
+}
+.image2 {
+  position: absolute;
+  top: 30px;
+  left: 0px;
+}
+</style>
+
+<div class="parent">
+  <img class="image1" src="https://placehold.it/50" />
+  <img class="image2" src="https://placehold.it/100" />
+</div>
