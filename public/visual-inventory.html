@@ -3,7 +3,7 @@
 <html>
 
 <head>
-
+<title>Visual Inventory Dashboard</title>
 
 <style>
     .placeable {
@@ -49,5 +49,84 @@
   <img id="item3" class="shelf-item placeable" src="assets/img/waterbottle.png">
   <img id="item4" class="shelf-item placeable" src="assets/img/waterbottle.png">
 </body>
+
+
+<!-- material-kit js - begin -->
+<script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
+<script src="assets/js/core/popper.min.js" type="text/javascript"></script>
+<script src="assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+<script src="assets/js/plugins/moment.min.js"></script>
+<!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+<script src="assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+<script src="assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+<!--  Google Maps Plugin  -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+<script src="assets/js/material-kit.js?v=2.0.5" type="text/javascript"></script></body>
+<!-- material-kit js - end -->
+
+<script type="text/javascript">
+// polling inventoryAmount from server.
+// display the same number of bottles as inventoryAmount.
+let url = "/inventoryAmount";
+
+function readInventoryAmount() {
+  $.get(url, function(data) {
+    console.dir(data); // should be an integer
+    let inventoryAmount = parseInt(data);
+    // display the number of bottles according to inventoryAmount
+    displayBottles(inventoryAmount);
+  });
+}
+
+setInterval(readInventoryAmount, 200);
+
+/**
+ * display the number of bottles according to inventoryAmount
+ */
+function displayBottles(inventoryAmount) {
+  switch(inventoryAmount) {
+    case 0:
+      $("#item1").hide();
+      $("#item2").hide();
+      $("#item3").hide();
+      $("#item4").hide();
+      break;
+    case 1:
+      $("#item1").show();
+      $("#item2").hide();
+      $("#item3").hide();
+      $("#item4").hide();
+      break;
+    case 2:
+      $("#item1").show();
+      $("#item2").show();
+      $("#item3").hide();
+      $("#item4").hide();
+      break;
+    case 3:
+      $("#item1").show();
+      $("#item2").show();
+      $("#item3").show();
+      $("#item4").hide();
+      break;
+    case 4:
+      $("#item1").show();
+      $("#item2").show();
+      $("#item3").show();
+      $("#item4").show();
+      break;
+    default:
+      $("#item1").show();
+      $("#item2").show();
+      $("#item3").show();
+      $("#item4").show();
+      break;
+  }
+}
+</script>
 
 </html>
