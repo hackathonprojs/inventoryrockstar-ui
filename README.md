@@ -1,4 +1,4 @@
-#inventoryrockstar-ui
+# inventoryrockstar-ui
 
 to run the demo: 
 > git clone https://github.com/hackathonprojs/inventoryrockstar-ui
@@ -13,11 +13,11 @@ to run the demo:
 go to 
 http://localhost:8000/visual-inventory.html
 
-then run the tensorflow-react-video project.  tensorflow-react-video project will submit the inventory number to http://localhost:8000/inventoryAmount?newValue={newValue}
+then run the tensorflow-react-cam project.  tensorflow-react-cam project will submit the inventory number to http://localhost:8000/inventoryAmount?newValue={newValue}
 
 
 
-in the absence of the tensorflow-react-video project, we can use the following page to control the inventory amount.
+in the absence of the tensorflow-react-cam project, we can use the following page to control the inventory amount.
 http://localhost:8000/control.html  
 when you change the inventory amount, you can see the corresponding changes on visual-inventory.html.
 
