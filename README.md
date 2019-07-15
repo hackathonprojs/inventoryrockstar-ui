@@ -24,3 +24,5 @@ when you change the inventory amount, you can see the corresponding changes on v
 
 alternatively, this url can be used to change the inventory amount.
 http://localhost:8000/inventoryAmount?newValue=3
+
+
